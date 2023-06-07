@@ -1,19 +1,20 @@
 # Sprint 10
-'Structured Query Language'
---SQL--
+'Structured Query Language'</br>
+--SQL--</br></br>
 
 
-ElephantSQL -- to create databases and connect to remotely using python
-PostgreSQL -- Open source relational database management system, python support.
-MongoDB -- create documents, connect remotely using python, and to explore differences in SQL & noSQL // Database does not enforce schema plan
-
-How was working with MongoDB different from working with PostgreSQL?
+ElephantSQL -- to create databases and connect to remotely using python</br>
+PostgreSQL -- Open source relational database management system, python support.</br>
+MongoDB -- create documents, connect remotely using python, and to explore differences in SQL & noSQL // Database does not enforce schema plan</br>
+</br>
+How was working with MongoDB different from working with PostgreSQL?</br>
     I think MongoDB was faster in terms of transfering data and PostgreSQL
-    PostgreSQL and creating a schema for the data to conform to 
+    PostgreSQL and creating a schema for the data to conform to </br>
+</br>
+What was easier, and what was harder?</br>
+    Having to remove the single ' in the names of the data from the titanic.csv being inserted into the PostgreSQL db was somewhat harder than inserting the data into MongoDB.</br>
 
-What was easier, and what was harder?
-    Having to remove the single ' in the names of the data from the titanic.csv being inserted into the PostgreSQL db was somewhat harder than inserting the data into MongoDB.
-
+    Schema forces relational data to be split by multiple tables
     MongoDB no schema
 
 ## Prerequisites:
