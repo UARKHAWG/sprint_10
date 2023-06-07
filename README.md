@@ -8,7 +8,7 @@ PostgreSQL -- Open source relational database management system, python support.
 MongoDB -- create documents, connect remotely using python, and to explore differences in SQL & noSQL // Database does not enforce schema plan</br>
 </br>
 How was working with MongoDB different from working with PostgreSQL?</br>
-    I think MongoDB was faster in terms of transfering data and PostgreSQL
+    I think MongoDB was faster in terms of transfering data over PostgreSQL.
     PostgreSQL and creating a schema for the data to conform to </br>
 </br>
 What was easier, and what was harder?</br>

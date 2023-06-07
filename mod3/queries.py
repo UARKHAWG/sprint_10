@@ -183,4 +183,3 @@ GET_WEAPON_TABLE = '''
     WHERE charactercreator_character.character_id = charactercreator_character_inventory.character_id) as char_ci
     WHERE aw_ai.item_id = char_ci.item_id;
 '''
-
