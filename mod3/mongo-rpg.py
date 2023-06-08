@@ -15,7 +15,7 @@ def mongo_connect(dbname=DBNAME
                 , password=PASSWORD
                 , collection_name='rpg_data'):
     ''' func for connecting to mongo database'''
-    client = pymongo.MongoClient(f'mongodb+srv://uarkhawg:{PASSWORD}@cluster0.vbhicq8.mongodb.net/{DBNAME}?retryWrites=true&w=majority')
+    client = pymongo.MongoClient(f'mongodb+srv://uarkhawg:{password}@cluster0.nufpacs.mongodb.net/{dbname}?retryWrites=true&w=majority')
     mongo_db = client[dbname]
     collection = mongo_db[collection_name]
     return collection
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     # connect to collection that we want to add documents to
     db = client.rpg_data
     col = db['rpg_data']
-    col.drop({})
+    #col.drop({})
     doc_creation(col, sl_curs,  q.GET_CHAR_TABLE, q.GET_ITEM_TABLE, q.GET_WEAPON_TABLE)
 
     print(show_all(col))
