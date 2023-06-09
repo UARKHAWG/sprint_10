@@ -18,16 +18,19 @@ DROP TABLE IF EXISTS demo;
 
 create_demo_table='''
     CREATE TABLE demo (
-        S VARCHAR(26) NOT NULL,
-        X INT NOT NULL,
-        Y INT NOT NULL
+          S VARCHAR(26) NOT NULL
+        , X INT NOT NULL
+        , Y INT NOT NULL
     )
 '''
 
 
 insert_data = '''
     INSERT INTO demo (S, X, Y)
-    VALUES('g', 3, 9)
+    VALUES
+      ('g', 3, 9)
+    , ('v', 5, 7)
+    , ('f', 8, 7)
 '''
 
 
@@ -38,12 +41,15 @@ row_count = '''
 
 
 xy_at_least_5 = '''
-
+    SELECT COUNT(*)
+    FROM demo
+    WHERE X >= 5; 
 '''
 
 
 unique_y = '''
-
+    SELECT COUNT(DISTINCT Y)
+    FROM demo;
 '''
 
 curs.execute(drop_table)
@@ -58,8 +64,3 @@ print('Insert completed successfully')
 
 conn.commit()
 conn.close()
-
-if __name__ == '__main__':
-    conn = sqlite3.connect('demo_data.sqlite3')
-    curs = conn.cursor()
-    print(curs.execute(row_count))
