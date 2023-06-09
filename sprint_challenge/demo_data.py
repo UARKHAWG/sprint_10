@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS demo;
 '''
 
 
-create_demo_table='''
+create_demo_table = '''
     CREATE TABLE demo (
           S VARCHAR(26) NOT NULL
         , X INT NOT NULL
@@ -28,14 +28,14 @@ create_demo_table='''
 insert_data = '''
     INSERT INTO demo (S, X, Y)
     VALUES
-      ('g', 3, 9)
-    , ('v', 5, 7)
-    , ('f', 8, 7)
+      ("'g'", 3, 9)
+    , ("'v'", 5, 7)
+    , ("'f'", 8, 7)
 '''
 
 
 row_count = '''
-    SELECT *
+    SELECT COUNT(*)
     FROM demo;
 '''
 
@@ -43,7 +43,7 @@ row_count = '''
 xy_at_least_5 = '''
     SELECT COUNT(*)
     FROM demo
-    WHERE X >= 5; 
+    WHERE X >= 5;
 '''
 
 

@@ -20,8 +20,8 @@ results = curs.execute('''
 
 
 schema_behind_any_table = curs.execute('''
-    SELECT sql 
-    FROM sqlite_master 
+    SELECT sql
+    FROM sqlite_master
     WHERE name="Customer";
 ''').fetchall()
 
@@ -35,36 +35,26 @@ expensive_items = curs.execute('''
 
 
 avg_hire_age = curs.execute('''
-    SELECT
-    ROUND(AVG(ROUND((julianday(HireDate) - julianday(BirthDate)) / 365))) AS date_average
+    SELECT AVG(HireDate - BirthDate)
     FROM Employee;
 ''').fetchall()
 
 
-# avg_hire_age = curs.execute('''
-# SELECT
-#     id,
-#     HireDate,
-#     BirthDate,
-#     ROUND((julianday(HireDate) - julianday(BirthDate)) / 365) AS date_difference,
-#     AVG(ROUND((julianday(HireDate) - julianday(BirthDate)) / 365)) AS date_average
-#     FROM Employee;
-# ''').fetchall()
-
-
 ten_most_expensive = curs.execute('''
-    SELECT ProductName, UnitPrice, CompanyName
-    FROM Product
-	JOIN Supplier
-	ON Product.Id == Supplier.Id
-    ORDER BY UnitPrice DESC
+    SELECT Product.ProductName
+    , Product.UnitPrice
+    , Supplier.CompanyName
+    FROM Product, Supplier
+    WHERE Product.SupplierId = Supplier.Id
+    ORDER BY Product.UnitPrice DESC
     LIMIT 10;
 ''').fetchall()
 
 
 largest_category = curs.execute('''
-    SELECT COUNT(ProductName) 'category with most unique products'
-    FROM Product
-    GROUP BY CategoryId
-    ORDER BY COUNT(ProductName) DESC;
+SELECT Category.CategoryName, COUNT(DISTINCT Product.Id)
+FROM Category, Product
+WHERE Category.Id = Product.CategoryId
+GROUP BY 1 ORDER BY 2 DESC
+LIMIT 1;
 ''').fetchall()
