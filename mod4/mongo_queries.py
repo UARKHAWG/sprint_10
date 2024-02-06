@@ -1,3 +1,4 @@
+''' MongoDB Queries '''
 import pymongo
 from os import getenv
 from queries import MongoAnswers
