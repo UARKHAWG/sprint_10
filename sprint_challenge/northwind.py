@@ -1,8 +1,4 @@
-'''
-sqlite connection to northwind.sqlite3 and querying the data
-'''
-
-
+''' sqlite connection to northwind.sqlite3 and querying the data '''
 import sqlite3
 
 
